@@ -127,7 +127,7 @@ pub fn default_renderer() -> Renderer(Element(msg)) {
       case destination {
         option.None -> html.span(attributes, [html.text(alt)])
         option.Some(url) ->
-          html.img([attribute.href(url), attribute.alt(alt), ..attributes])
+          html.img([attribute.src(url), attribute.alt(alt), ..attributes])
       }
     },
     linebreak: html.br([]),
