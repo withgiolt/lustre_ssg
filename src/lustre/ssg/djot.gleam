@@ -389,7 +389,18 @@ fn render_block(
         )),
       )
     }
-    jot.Div(attributes:, items:) -> {
+    jot.Div(attributes:, items:, class: option.Some(_)) -> {
+      renderer.div(
+        attributes,
+        list.map(items, render_block(
+          _,
+          references,
+          reference_attributes,
+          renderer,
+        )),
+      )
+    }
+    jot.Div(attributes:, items:, class: option.None) -> {
       renderer.div(
         attributes,
         list.map(items, render_block(
